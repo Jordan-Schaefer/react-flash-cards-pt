@@ -15,7 +15,6 @@ class App extends React.Component{
   }
 
   setView(newView){
-    console.log('Its been Clicked!! ', newView)
     this.setState({
       view: newView
     })
