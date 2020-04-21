@@ -28,11 +28,8 @@ class CreateCard extends React.Component{
   handleSubmit(event){
     event.preventDefault();
     this.props.addCard(this.state)
-    console.log(this.state)
-    this.setState({
-      question: '',
-      answer: ''
-    })
+    this.handleReset();
+    this.props.setView('view-cards')
   }
 
   handleReset(event){
@@ -52,8 +49,8 @@ class CreateCard extends React.Component{
             <textarea onChange={this.handleQuestion} className='form-control form-control-lg' type="text" placeholder='Write the question here' rows='4' ></textarea>
             <label className='text-sm-left font-weight-bold'>Answer:</label>
             <textarea onChange={this.handleAnswer} className='form-control form-control-lg' type="text" placeholder='Write the answer here' rows='8'></textarea>
-            <button className='btn btn-outline-secondary'>Cancle</button>
-            <button onClick={this.handleReset} className='btn btn-outline-success'>Submit</button>
+            <button onClick={this.handleReset} className='btn btn-outline-secondary'>Cancle</button>
+            <button className='btn btn-outline-success'>Submit</button>
           </form>
         </div>
       </>

@@ -12,7 +12,8 @@ class App extends React.Component{
       view: 'view-cards',
       cards: []
     }
-    this.setView = this.setView.bind(this);""
+    this.setView = this.setView.bind(this);
+    this.addCard = this.addCard.bind(this);
   }
 
   setView(newView){
@@ -36,7 +37,7 @@ class App extends React.Component{
 
   saveCards(){
     const jsonCards = JSON.stringify(this.state.cards);
-    localStorage.setItem(jsonCards);
+    localStorage.setItem("flash-cards", jsonCards);
   }
 
   addCard(newCards){
@@ -46,7 +47,6 @@ class App extends React.Component{
   }
 
   render(){
-    console.log(this.state.cards)
     return (
       <>
         <Nav setView={this.setView}/>
