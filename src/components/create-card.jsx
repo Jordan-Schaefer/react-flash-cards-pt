@@ -4,7 +4,7 @@ class CreateCard extends React.Component{
 
   render(){
     return (
-      <h1>Create New Card</h1>
+      <h1 className='text-center'>Create New Card</h1>
     )
   }
 }
