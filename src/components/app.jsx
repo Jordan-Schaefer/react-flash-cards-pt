@@ -43,7 +43,7 @@ class App extends React.Component{
   addCard(newCards){
     this.setState({
       cards: newCards
-    }, this.saveCards())
+    }, this.saveCards)
   }
 
   render(){
