@@ -1,7 +1,8 @@
 import React from 'react';
 import ViewCards from './view-cards';
 import ReviewCards from './review-cards';
-import CreatedCard from './create-card';
+import CreateCard from './create-card';
+import Nav from './nav';
 
 
 class App extends React.Component{
@@ -10,9 +11,11 @@ class App extends React.Component{
     this.state = {
       view: 'view-cards'
     }
+    this.setView = this.setView.bind(this);
   }
 
   setView(newView){
+    console.log('Its been Clicked!! ', newView)
     this.setState({
       view: newView
     })
@@ -33,9 +36,12 @@ class App extends React.Component{
 
   render(){
     return (
-      <div>
-        { this.getView() }
-      </div>
+      <>
+        <Nav setView={this.setView}/>
+        <div>
+          {this.getView()}
+        </div>
+      </>
     )
   }
 }
